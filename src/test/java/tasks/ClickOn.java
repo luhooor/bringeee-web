@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 import pageobjects.AuthRegistrationPageObjects;
+import pageobjects.SetFixPricePageObjects;
 
 public class ClickOn {
 
@@ -18,6 +19,15 @@ public class ClickOn {
                 break;
             case "join":
                 button = AuthRegistrationPageObjects.JOIN_BUTTON;
+                break;
+            case "admin order detail":
+                button = SetFixPricePageObjects.ORDER_DETAIL_BUTTON;
+                break;
+            case "Kirim":
+                button = SetFixPricePageObjects.KIRIM_BUTTON;
+                break;
+            case "Setujui":
+                button = SetFixPricePageObjects.SETUJU_BUTTON;
                 break;
 
             default:
@@ -46,6 +56,9 @@ public class ClickOn {
             case "driver":
                 element = AuthRegistrationPageObjects.DRIVER_TAB_ELEMENT;
                 break;
+            case "dropdown":
+                element = SetFixPricePageObjects.DROPDOWN_MENU;
+                break;
             default:
                 throw new Exception("No such button: " +elementType+" exist");
         }
@@ -54,5 +67,20 @@ public class ClickOn {
 
     }
 //    end klik tipe elemen
+//    click type link
+    public static Performable link(String linkType) throws Exception {
+        Target link;
+        switch (linkType){
+            case "admin list order":
+                link = SetFixPricePageObjects.LIST_ORDER_ELEMENT;
+                break;
+
+            default:
+                throw new Exception("no such link: "+linkType);
+        }
+
+        return Task.where("{0} click on "+linkType,
+                Click.on(link));
+    }
 
 }

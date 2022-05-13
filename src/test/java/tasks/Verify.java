@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import pageobjects.AuthRegistrationPageObjects;
+import pageobjects.SetFixPricePageObjects;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -22,6 +23,12 @@ public class Verify {
             case "login":
             case "register":
                 element = AuthRegistrationPageObjects.ERROR_MESSAGE;
+                break;
+            case "perubahan tarif":
+                element = SetFixPricePageObjects.DISESUAIKAN_TEXT;
+                break;
+            case "perkiraan tarif":
+                element = SetFixPricePageObjects.SESUAI_PERKIRAAN_TARIF_TEXT;
                 break;
             default:
                 throw new Exception("There is no element type: " + elementType);

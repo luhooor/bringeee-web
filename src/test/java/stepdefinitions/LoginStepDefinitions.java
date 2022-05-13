@@ -45,6 +45,13 @@ public class LoginStepDefinitions {
     @And("{actor} click on {string} button")
     public void visitorClickOnButton(Actor actor, String buttonType) throws Exception {
         actor.attemptsTo(ClickOn.button(buttonType));
+//        if ("customer".equals(actor)) {
+//            WaitUntil.the(AuthRegistrationPageObjects.BUAT_ORDER_ELEMENT, isVisible()).forNoMoreThan(30).seconds();
+//        } else if ("driver".equals(actor)) {
+//            WaitUntil.the(AuthRegistrationPageObjects.LIST_ORDER_DRIVER_ELEMENT, isVisible()).forNoMoreThan(30).seconds();
+//        } else if ("admin".equals(actor)) {
+//            WaitUntil.the(AuthRegistrationPageObjects.HOME_ADMIN, isVisible()).forNoMoreThan(30).seconds();
+//        }
     }
 
     @Then("{actor} logged in as {string} and redirected to {string}")

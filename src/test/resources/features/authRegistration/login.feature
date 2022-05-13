@@ -1,4 +1,4 @@
-@authregis @login
+@authregis @login @demo
 Feature: Login
 
   Background:

@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Upload;
 import net.serenitybdd.screenplay.actions.UploadToTarget;
 import net.serenitybdd.screenplay.targets.Target;
 import pageobjects.AuthRegistrationPageObjects;
+import pageobjects.SetFixPricePageObjects;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -58,6 +59,9 @@ public class InputText {
                 break;
             case "plat":
                 field = AuthRegistrationPageObjects.PLAT_INPUT;
+                break;
+            case "Sesuaikan tarif":
+                field = SetFixPricePageObjects.TARIF_INPUT;
                 break;
             default:
                 throw new Exception("No "+fieldType+" input exist");

@@ -12,7 +12,7 @@ Feature: Registration Customer
     And visitor click on "join" button
     Then visitor should see success message
 
-  @negative-authregis
+  @negative-authregis @demo
   Scenario Outline: Visitor register as customer unsuccessfully
     When visitor click on "daftar" element
     And visitor click on "driver" element
